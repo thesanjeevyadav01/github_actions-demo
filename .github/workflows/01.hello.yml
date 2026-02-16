@@ -1,0 +1,16 @@
+name : 01 - Hello World
+
+on: 
+  push:
+    branches: [main]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout-repo
+        uses: actions/chechout@v4
+
+      - name: Print greeting
+        run: echo "Hello from github actions on ${{ github.ref }}  by ${{ github.actor}}"
+          
